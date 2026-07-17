@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Hari Spesial! ✨ | Surat Ucapan Ulang Tahun</title>
+    <meta name="description" content="Sebuah kartu ucapan ulang tahun interaktif yang dibuat khusus untuk merayakan hari spesialmu.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Canvas for Particles and Balloons -->
+    <canvas id="bg-canvas"></canvas>
+    <!-- Music Player Controller -->
+    <button id="music-btn" class="control-btn" aria-label="Nyalakan/Matikan Musik">
+        <svg id="music-icon-play" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="currentColor" d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+        </svg>
+        <svg id="music-icon-mute" viewBox="0 0 24 24" width="24" height="24" class="hidden">
+            <path fill="currentColor" d="M4.27 3L3 4.27l9 9v.28c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4v-1.73l6 6 1.27-1.27L4.27 3zM14 7h4V3h-6v5.18l2 2V7z"/>
+        </svg>
+    </button>
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Envelope Wrapper -->
+        <div id="envelope-wrapper" class="envelope-wrapper">
+            <div id="envelope" class="envelope">
+                <div class="envelope-flap"></div>
+                <div class="envelope-front"></div>
+                <div class="envelope-back"></div>
+                
+                <!-- Wax Seal -->
+                <div id="wax-seal" class="wax-seal" role="button" aria-label="Buka Surat">
+                    <div class="seal-inner">
+                        <svg viewBox="0 0 24 24" width="32" height="32">
+                            <path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </div>
+                    <span class="seal-prompt">Buka Aku ✨</span>
+                </div>
+                <!-- Letter Card -->
+                <article id="letter" class="letter-card">
+                    <div class="letter-inner">
+                        <!-- Letter Header -->
+                        <header class="letter-header">
+                            <h1 id="typewriter-title"></h1>
+                        </header>
+                        <!-- Letter Body -->
+                        <section class="letter-body">
+                            <p id="typewriter-text" class="letter-text"></p>
+                        </section>
+                        <!-- Interactive Birthday Cake -->
+                        <section class="cake-section">
+                            <div class="cake-container" id="cake-container" role="button" aria-label="Tiup Lilin">
+                                <div class="candles-wrapper">
+                                    <!-- Candle 1 -->
+                                    <div class="candle" id="candle-1">
+                                        <div class="flame"></div>
+                                        <div class="candle-stick"></div>
+                                    </div>
+                                    <!-- Candle 2 -->
+                                    <div class="candle" id="candle-2">
+                                        <div class="flame"></div>
+                                        <div class="candle-stick"></div>
+                                    </div>
+                                    <!-- Candle 3 -->
+                                    <div class="candle" id="candle-3">
+                                        <div class="flame"></div>
+                                        <div class="candle-stick"></div>
+                                         </div>
+                                </div>
+                                <!-- Cake SVG -->
+                                <svg class="cake-svg" viewBox="0 0 100 80" width="120" height="96">
+                                    <!-- Plate -->
+                                    <ellipse cx="50" cy="72" rx="45" ry="6" fill="#e0e0e0" />
+                                    <!-- Cake Base Layer -->
+                                    <path d="M 12,50 Q 50,55 88,50 L 88,70 Q 50,75 12,70 Z" fill="#d2a07c" />
+                                    <!-- Cream Frosting Bottom -->
+                                    <path d="M 12,50 Q 50,55 88,50 Q 88,55 80,57 Q 50,62 20,57 Z" fill="#ffb7b2" />
+                                    <!-- Cake Top Layer -->
+                                    <path d="M 15,30 Q 50,35 85,30 L 85,50 Q 50,55 15,50 Z" fill="#fbc3bc" />
+                                    <!-- Cream Frosting Top & Drips -->
+                                    <path d="M 15,30 Q 50,35 85,30 L 85,38 Q 80,44 75,38 Q 70,32 65,38 Q 60,44 55,38 Q 50,32 45,38 Q 40,44 35,38 Q 30,32 25,38 Q 20,44 15,38 Z" fill="#ffffff" />
+                                    <!-- Strawberry / Topping -->
+                                    <circle cx="50" cy="27" r="4" fill="#ff4d6d" />
+                                </svg>
+                                <span class="cake-prompt" id="cake-prompt">Klik lilin untuk meniupnya! 🎂</span>
+                            </div>
+                        </section>
+                        <!-- Letter Footer -->
+                        <footer class="letter-footer">
+                            <p class="signature">Dengan penuh kasih,<br><strong id="signature-name">Temanmu</strong></p>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+    <!-- JS Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
